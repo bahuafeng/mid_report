@@ -1,0 +1,14 @@
+% !Mode:: "TeX:UTF-8"
+\section{存在的困难与问题}
+
+本课题理论研究方面困难基本解决，开发困难有：
+\begin{enumerate}
+    \item 仿真界面如何和算法仿真同时进行刷新；
+    \item 仿真界面与算法数据的同步。
+\end{enumerate}
+
+采用的解决的方案：
+\begin{enumerate}
+    \item 采用~$2$~个线程，主线程负责仿真界面的刷新，子线程负责仿真算法；
+    \item 数据共享，主线程和子线程共享算法数据，一旦数据更新，刷新到仿真界面中。
+\end{enumerate}
